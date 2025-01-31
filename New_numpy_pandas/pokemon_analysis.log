@@ -1,0 +1,7 @@
+2025-01-29 10:53:52,029:INFO:CSV file read successfully.
+2025-01-29 10:53:52,046:INFO:Calculated average stats for Type 1 and Type 2.
+2025-01-29 10:53:52,467:INFO:Bar graphs plotted and saved as average_stats.png.
+2025-01-29 10:53:52,875:INFO:Scatter plots and boxplots created and saved as scatter_boxplots.png.
+2025-01-29 10:53:52,885:INFO:Calculated average Total and Speed for specific type combinations.
+2025-01-29 10:53:52,904:INFO:Performed descriptive statistics on Pokemon data.
+2025-01-29 10:53:52,909:INFO:Filtered unique Type 1 and Type 2 based on conditions.
