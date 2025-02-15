@@ -1,0 +1,50 @@
+
+
+1) find the average currency rate conversion from USD to Algerian Dinar 
+and Australian Doller 
+
+2)Find the products having offer on it and display product name , safety Stock Level, Listprice,  and product model id, type of discount,  percentage of discount,  offer start date and offer end date
+  
+
+3)create  view to display Product name and Product review
+
+4) find out the vendor for product   paint, Adjustable Race and blade	 
+
+5) find product details shipped through ZY - EXPRESS
+
+6) find the tax amt for products where order date and ship date are on the same day
+
+7) find the average days required to ship the product based on shipment type.
+
+8)find the name of employees working in day shift
+
+9)based on product and product cost history find the name , service provider time and average Standardcost  
+
+10)  find products with average cost more than 500
+
+11) find the employee who worked in multiple territory
+
+12) find out the Product model name,  product description for culture  as Arabic
+
+#### Sub query
+13) display EMP name, territory name, saleslastyear salesquota and bonus
+
+14) display EMP name, territory name, saleslastyear salesquota and bonus from Germany and United Kingdom
+
+15) Find all employees who worked in all North America territory
+
+16) find all products in the cart
+
+17) find all the products with special offer
+
+18) find all employees name , job title, card details whose credit card expired in the month 11 and year as 2008
+
+19
+
+
+
+
+
+
+
+
