@@ -12,9 +12,9 @@ use AdventureWorks2022;
 
 use temp;
 
-create schema assign;
+create schema worksheet;
 
-create table assign.customer(
+create table worksheet.customer(
 customer_id int identity primary key,
 customer_name varchar(50),
 Aadhar_id char(10) unique,
@@ -29,7 +29,7 @@ state_code char(2) check (len(state_code)=2)
 --Address type code must accept only (B,H,O)
 --Address type  having the information as  (B- business, H- HOME, O-office)
 
-create table assign.address_type(
+create table worksheet.address_type(
 	
 	address_type char(1) primary key check(len(address_type)=1 and address_type in ('b','o','h')),
 	information varchar(50)
@@ -41,36 +41,37 @@ create table assign.address_type(
 --State name 
 --Country_code char(2)
 
-create table assign.state_info(
+create table worksheet.state_info(
 state_id int primary key,
 state_name varchar(40),
 country_code char(2)
 )
 
-INSERT INTO assign.address_type VALUES('B','Business Address')
+INSERT INTO worksheet.address_type VALUES('B','Business Address')
 
 --Alter tables to link all tables based on suitable columns and foreign keys.
 
-alter table assign.customer
+alter table worksheet.customer
 add constraint new2 foreign key (address_type) references assign.address_type(address_type) 
 
-drop table assign.address_type
+drop table worksheet.address_type
 
 --Change the column name from customer table customer name as c_name
-EXEC sp_rename 'assign.customer.c_name', 'Customer_name', 'COLUMN';
+EXEC sp_rename 'worksheet.customer.customer_name', 'Cust_name', 'COLUMN';
 
-select * from assign.customer
+select * from worksheet.customer
 
 --Insert the suitable records into the respective tables
-INSERT INTO assign.address_type VALUES('o','Office Address')
+INSERT INTO worksheet.address_type VALUES('o','Office Address')
 
-INSERT INTO assign.customer VALUES('Vikrant','1234567890',1234567890,'1980-04-30','Pune','o','MH')
+INSERT INTO worksheet.customer VALUES('Vikrant','1234567890',1234567890,'1980-04-30','Pune','o','MH')
 
-INSERT INTO assign.state_info VALUES(1,'Maharashtra','MH')
+INSERT INTO worksheet.state_info VALUES(1,'Maharashtra','MH')
 
 
 --Change the data type of  country_code to varchar(3)
-alter table assign.state_info
+
+alter table worksheet.state_info
 alter column country_code varchar(3)
 
 
@@ -82,7 +83,9 @@ select * from Sales.Currency where name ='Algerian Dinar'
 select * from Sales.CurrencyRate
 select * from Sales.CountryRegionCurrency 
 
-select cr.ToCurrencyCode,cr.FromCurrencyCode,AVG(AverageRate)
+select cr.ToCurrencyCode,
+		cr.FromCurrencyCode,
+		AVG(AverageRate)
 from Sales.CurrencyRate cr,
 Sales.Currency c
 where ToCurrencyCode in ('DZD','AUD')
@@ -130,7 +133,9 @@ select * from Production.Product where name in ('Adjustable Race','Blade','Paint
 select * from Purchasing.ProductVendor
 select * from Purchasing.Vendor
 
-select p.Name,v.Name,count(*) cnt
+select p.Name,
+		v.Name,
+		count(*) cnt
 from Purchasing.Vendor v,
 Production.Product p,
 Purchasing.ProductVendor pv
